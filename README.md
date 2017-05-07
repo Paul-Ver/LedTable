@@ -1,6 +1,13 @@
 # LedTable
 Ikea LED table project
 
+![Cyclon preview image](https://github.com/Paul-Ver/LedTable/blob/master/preview/cyclon.gif)
+
+Reference material:
+- https://github.com/davidhrbaty/IKEA-LED-Table
+- https://www.youtube.com/watch?v=liJZyRc5Fsc
+- https://www.youtube.com/watch?v=D_QBlFIQk-o
+
 # Bill of Materials
 AC100-240V to DC 5V 10A 50W Power Adapter 10$
 
@@ -19,11 +26,10 @@ Optional:
 - Barrel jack screw terminal adapter
 - Bluetooth module HC-05 or HC-06
 
-# Required 
-Dremel or drill&jigsaw
-(Optional) Paint
-
-![Cyclon preview image](https://github.com/Paul-Ver/LedTable/blob/master/preview/cyclon.gif)
+# Tools
+- Dremel or drill&jigsaw
+- [Soldering iron](http://www.ebay.com/itm/220V-110V-75W-936-Power-Iron-Frequency-Change-Desolder-Welding-Soldering-Station-/192134755258?hash=item2cbc1fb3ba:g:-H8AAOSw4CFYz3zN) & solder
+- (Optional) Paint
 
 # TODO
 - Add bluetooth module
