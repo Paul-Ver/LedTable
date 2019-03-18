@@ -1,12 +1,27 @@
 # LedTable
 Ikea LED table project
 
+Using ["BlueDuino"](https://github.com/Paul-Ver/BlueDuino) as a controller (see this project for PCB + parts, can also be done with regular Arduino over USB).
+
 ![Cyclon preview image](https://github.com/Paul-Ver/LedTable/blob/master/preview/cyclon.gif)
 
 Reference material:
 - https://github.com/davidhrbaty/IKEA-LED-Table
 - https://www.youtube.com/watch?v=liJZyRc5Fsc
 - https://www.youtube.com/watch?v=D_QBlFIQk-o
+
+# TODO
+
+* Serial handling for USB/Bluetooth control(ler)
+* Implement
+    * Dice
+    * Pong
+    * Twinkle
+    * Tetris
+    * Snake
+* Improve menu / functions
+* Refactor code (split into multiple files for readability)
+* Control brightness with pot?
 
 # Bill of Materials
 AC100-240V to DC 5V 10A 50W Power Adapter 10$
@@ -25,14 +40,24 @@ Choose your favorite:
 Optional:
 - Barrel jack screw terminal adapter
 - Bluetooth module HC-05 or HC-06
+- Control thumbstick (with press function) or ~5-buttons (d-pad style layout)
+- Brightness potentiometer
 
 # Tools
 - Dremel or drill&jigsaw
-- [Soldering iron](http://www.ebay.com/itm/220V-110V-75W-936-Power-Iron-Frequency-Change-Desolder-Welding-Soldering-Station-/192134755258?hash=item2cbc1fb3ba:g:-H8AAOSw4CFYz3zN) & solder
+- [Soldering iron](http://www.ebay.com/itm/220V-110V-75W-936-Power-Iron-Frequency-Change-Desolder-Welding-Soldering-Station-/192134755258?hash=item2cbc1fb3ba:g:-H8AAOSw4CFYz3zN) & solder (or solderless LED strip clips)
 - (Optional) Paint
 
-# TODO
-- Add bluetooth module
-- Input protection register
-- Make schematic
-- Programming
+# Note on similiar projects
+
+Some completely chop up an LED strip or use individual LED's. This is simply not worth your time.
+
+# Note on ledstrips
+The effects of this table can only be realised by an "addressable" or "digital" LED strip. (Not an analog / RGB strip).
+
+The NeoPixel LED strips are by far the most popular; but other SPI-based LED strips exist. Please note that using SPI LED strips has the following advantages:
+* Faster setting of LED's
+* Not bound to specific timing (theoretically works better with Arduino-WiFi (ESP8266) or Raspberry Pi, as NeoPixel requires real-time - timing)
+* No need to store all LED's in memory (you can calculate the color 'as-you-go' and not store all of them).
+
+Due to the reasons above I'm an avid fan of SPI-based LED strips, the reason I used NeoPixels for this project is because I had them lying around and it did fit the purpose (somewhat to get rid of them), but I would recommend SPI based LED strips for basically any project.
