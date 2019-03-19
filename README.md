@@ -10,7 +10,7 @@ Reference material:
 - https://www.youtube.com/watch?v=liJZyRc5Fsc
 - https://www.youtube.com/watch?v=D_QBlFIQk-o
 
-# TODO
+## TODO
 
 * Serial handling for USB/Bluetooth control(ler)
 * Implement
@@ -23,7 +23,7 @@ Reference material:
 * Refactor code (split into multiple files for readability)
 * Control brightness with pot?
 
-# Bill of Materials
+## Bill of Materials
 AC100-240V to DC 5V 10A 50W Power Adapter 10$
 
 | Item                       | Cost | Link  |
@@ -43,16 +43,16 @@ Optional:
 - Control thumbstick (with press function) or ~5-buttons (d-pad style layout)
 - Brightness potentiometer
 
-# Tools
+## Tools
 - Dremel or drill&jigsaw
 - [Soldering iron](http://www.ebay.com/itm/220V-110V-75W-936-Power-Iron-Frequency-Change-Desolder-Welding-Soldering-Station-/192134755258?hash=item2cbc1fb3ba:g:-H8AAOSw4CFYz3zN) & solder (or solderless LED strip clips)
 - (Optional) Paint
 
-# Note on similiar projects
+## Note on similiar projects
 
 Some completely chop up an LED strip or use individual LED's. This is simply not worth your time.
 
-# Note on ledstrips
+## Note on ledstrips
 The effects of this table can only be realised by an "addressable" or "digital" LED strip. (Not an analog / RGB strip).
 
 The NeoPixel LED strips are by far the most popular; but other SPI-based LED strips exist. Please note that using SPI LED strips has the following advantages:
