@@ -1,9 +1,13 @@
 # LedTable
 Ikea LED table project
 
-Using ["BlueDuino"](https://github.com/Paul-Ver/BlueDuino) as a controller (see this project for PCB + parts, can also be done with regular Arduino over USB).
+LED Matrix with cool effects and games in a cheap Ikea Lack table.
+
+Built in analog joystick control + bluetooth.
 
 ![Cyclon preview image](https://github.com/Paul-Ver/LedTable/blob/master/preview/cyclon.gif)
+
+Using ["BlueDuino"](https://github.com/Paul-Ver/BlueDuino) or Arduino as a controller.
 
 Reference material:
 - https://github.com/davidhrbaty/IKEA-LED-Table
