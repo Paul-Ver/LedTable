@@ -66,6 +66,7 @@ void loop() {
       break;
     case 5:
       //funky twinkle/random rainbow?
+      //Cyclon?
       break;
     case 6:
       snakeLoop();
