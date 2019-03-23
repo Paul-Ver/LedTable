@@ -17,7 +17,6 @@ Reference material:
 ## TODO
 
 * Implement
-    * Dice
     * Pong
     * Twinkle
     * Tetris
