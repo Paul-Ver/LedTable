@@ -16,9 +16,9 @@ uint8_t ypos = 1;
 uint8_t animSpeed = 1;
 int pixNr = 0;
 bool up, down, left, right;
+int incomingByte = 0;   // for incoming serial data
 
 uint16_t holdTime = 0;
-bool joystickPressed = false;
 
 void setup() {
   // put your setup code here, to run once:
@@ -31,6 +31,8 @@ void setup() {
 
 void loop() {
   handleJoystick();
+  handleSerial();
+  handleCursor();
 
   if (holdTime > 0) {
     Serial.print("Hold button ms: ");
@@ -304,6 +306,66 @@ static void showNumber(uint8_t nr) {
   //handleJoystick();
   //drawXY(xpos,ypos,strip.Color(255, 0, 0));
 */
+static void handleCursor(){
+  if (up){
+    xpos++;
+  }
+  if (down){
+    xpos--;
+  }
+  if (left){
+    ypos++;
+  }
+  if (right){
+    ypos--;
+  }
+  if (xpos > 12) {
+    xpos = 0;
+  }
+  if (ypos > 12) {
+    ypos = 0;
+  }
+}
+static void handleSerial(){
+  // send data only when you receive data:
+  if (Serial.available() > 0) {
+      // read the incoming byte:
+      incomingByte = Serial.read();
+
+      // say what you got:
+      Serial.print("I received: ");
+      Serial.println(incomingByte, DEC);
+      if(incomingByte > 48 && incomingByte < 58){
+        state = incomingByte-48;
+        Serial.print("State changed to: ");
+        Serial.println(state);
+        strip.clear();
+      }
+      switch (incomingByte){
+        case 45://+
+        animSpeed += 10;
+        break;
+        case 43://-
+        animSpeed -= 10;
+        break;
+        case 119://w
+        up = true;
+        break;
+        case 97://a
+        left = true;
+        break;
+        case 115://s
+        down = true;
+        break;
+        case 100://d
+        right = true;
+        break;
+        case 32://space
+        holdTime = 100;
+        break;
+      }
+  }
+}
 
 static void handleJoystick() {
   up = false;
@@ -317,26 +379,16 @@ static void handleJoystick() {
   uint16_t x = analogRead(XPIN);
   uint16_t y = analogRead(YPIN);
   if (x > 1000) {
-    xpos++;
     up = true;
   }
   if (x < 100) {
-    xpos--;
     down = true;
   }
   if (y > 1000) {
-    ypos++;
     left = true;
   }
   if (y < 100) {
-    ypos--;
     right = true;
-  }
-  if (xpos > 12) {
-    xpos = 0;
-  }
-  if (ypos > 12) {
-    ypos = 0;
   }
 }
 static void drawXY(int x, int y, uint32_t c) {

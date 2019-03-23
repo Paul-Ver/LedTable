@@ -16,7 +16,6 @@ Reference material:
 
 ## TODO
 
-* Serial handling for USB/Bluetooth control(ler)
 * Implement
     * Dice
     * Pong
